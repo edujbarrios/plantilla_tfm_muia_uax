@@ -1,2 +1,3 @@
-# plantilla_tfm_muia_uax
-Desarrollo del template para la realización del Trabajo Fin de Máster del MU en Inteligencia Artificial de la Universidad Alfonso X el Sabio (UAX)
+# Plantilla de TFM para el MU en Inteligencia Artificial (UAX) en `LaTeX`
+
+Los assets (logo, branding colours...) de la UAX, pueden encontrarse en: https://brandfetch.com/uax.es
