@@ -1,6 +1,13 @@
 # Plantilla de TFM para el MU en Inteligencia Artificial (UAX) en `LaTeX`
 
-Los assets (logo, branding colours...) de la UAX, pueden encontrarse en: https://brandfetch.com/uax.es
+Se está usando **`pdflatex`** para realizar la plantilla:
+
+Para ejecutarla:
+
+`pdflatex main.tex`
+
+**Este repositorio está en desarrollo, puedes contribuir en el diseño de la plantilla, fuentes, nuevos capitulos etc.***
+
 
 > [!NOTE]
 > ## UAX · Brand Colors

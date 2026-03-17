@@ -1,0 +1,35 @@
+# LaTeX temporary files
+*.aux
+*.log
+*.out
+*.toc
+*.blg
+*.bbl
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.lof
+*.lot
+*.dpth
+*.md5
+*.auxlock
+
+# Generated PDF files
+*.pdf
+
+# LaTeX build directories
+build/
+dist/
+
+# IDE and OS files
+.DS_Store
+.vscode/
+*.swp
+*.swo
+*~
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
