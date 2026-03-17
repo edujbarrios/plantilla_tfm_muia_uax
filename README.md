@@ -1,5 +1,7 @@
 # Plantilla de TFM para el MU en Inteligencia Artificial (UAX) en `LaTeX`
 
+***Inspirada en la plantilla de word disponible en el campus.***
+
 <image src="readme_images/portada.png" alt="Descripción de la imagen">
 
 
