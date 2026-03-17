@@ -1,44 +1,107 @@
 \thispagestyle{empty}
+\begin{titlepage}
+\newgeometry{top=0.9cm,bottom=0.9cm,left=0.9cm,right=0.9cm}
 
-\begin{center}
+% ===== DATOS EDITABLES =====
+\newcommand{\tituloTFM}{[Título del trabajo de fin de máster]}
+\newcommand{\autorTFM}{Nombre, Apellido1 Apellido2}
+\newcommand{\directorTFM}{[Director/a]}
+\newcommand{\fechaTFM}{[Fecha (mes y año)]}
+\newcommand{\logoTFM}{assets/transparent_logo.png}
 
-\vspace*{1cm}
+% ===== COLOR =====
+\definecolor{uaxblue}{RGB}{70,95,155}
 
-% --- LOGO ---
-\IfFileExists{assets/transparent_logo.png}{
-    \includegraphics[width=0.35\textwidth]{assets/transparent_logo.png}
-}{
-    \fbox{\parbox{5cm}{\centering LOGO}}
-}
+\begin{tikzpicture}[remember picture,overlay]
 
-\vspace{1.5cm}
+% =========================
+% MEDIDAS DE LA MAQUETA
+% =========================
+% caja izquierda: x = 0.8 a 2.95
+% caja principal: x = 3.15 a ancho-0.8
+% alto útil: y = 0.8 arriba / 0.8 abajo
 
-% --- UNIVERSIDAD ---
-{\Large \textbf{UNIVERSIDAD ALFONSO X EL SABIO}}\\[0.3cm]
-{\large ESCUELA POLITÉCNICA SUPERIOR}
+% ===== MARCO IZQUIERDO =====
+\draw[uaxblue,line width=0.8pt]
+([xshift=0.8cm,yshift=-0.8cm]current page.north west)
+rectangle
+([xshift=2.95cm,yshift=0.8cm]current page.south west);
 
-\vspace{2.5cm}
+% ===== MARCO PRINCIPAL =====
+\draw[uaxblue,line width=0.8pt]
+([xshift=3.15cm,yshift=-0.8cm]current page.north west)
+rectangle
+([xshift=-0.8cm,yshift=0.8cm]current page.south east);
 
-% --- TITULO ---
-{\LARGE \textbf{TRABAJO FIN DE MÁSTER}}\\[1cm]
+% =========================================================
+% COLUMNA IZQUIERDA
+% =========================================================
 
-{\Large
-\textbf{[TÍTULO DEL TRABAJO]}\\
-}
+% Logo arriba izquierda
+\node[anchor=north] at ([xshift=1.875cm,yshift=-1.15cm]current page.north west) {%
+    \IfFileExists{\logoTFM}
+        {\includegraphics[width=0.95cm]{\logoTFM}}
+        {\textcolor{uaxblue}{\fontsize{10}{12}\selectfont\textbf{UAX}}}
+};
 
-\vfill
+% Texto vertical centrado dentro de la columna izquierda
+\node[rotate=90, anchor=center] at ([xshift=1.875cm,yshift=-14.8cm]current page.north west) {%
+    \fontsize{12}{14}\selectfont\textbf{TRABAJO FIN DE MÁSTER}
+};
 
-% --- AUTOR ---
-{\large
-\textbf{Autor:} [Nombre y Apellidos]\\[0.5cm]
-\textbf{Director:} [Nombre del Director]\\
-}
+% Texto inferior de la columna izquierda
+\node[anchor=south] at ([xshift=1.875cm,yshift=1.15cm]current page.south west) {%
+    \parbox{1.1cm}{\centering
+    \color{uaxblue}\fontsize{9}{11}\selectfont\textbf{MUIA}\\[-1pt]\textbf{25-26}}
+};
 
-\vspace{2cm}
+% =========================================================
+% BLOQUE CENTRAL
+% Centro visual aproximado del bloque principal: x = 10.2cm
+% =========================================================
 
-% --- FECHA ---
-{\large
-[Mes, Año]
-}
+% Universidad
+\node[anchor=north,text=uaxblue] at ([xshift=10.2cm,yshift=-2.35cm]current page.north west) {%
+    \fontsize{17}{19}\selectfont\textbf{UNIVERSIDAD ALFONSO X EL SABIO}
+};
 
-\end{center}
+% Business Tech
+\node[anchor=north] at ([xshift=10.2cm,yshift=-3.65cm]current page.north west) {%
+    \fontsize{14}{16}\selectfont\textbf{Business Tech}
+};
+
+% Máster
+\node[anchor=north] at ([xshift=10.2cm,yshift=-4.75cm]current page.north west) {%
+    \fontsize{13}{15}\selectfont\textbf{Máster Universitario en Inteligencia Artificial}
+};
+
+% Título del tipo de trabajo
+\node[anchor=north] at ([xshift=10.2cm,yshift=-10.25cm]current page.north west) {%
+    \fontsize{22}{24}\selectfont\textbf{TRABAJO DE FIN DE MÁSTER}
+};
+
+% Título del trabajo
+\node[anchor=north] at ([xshift=10.2cm,yshift=-13.55cm]current page.north west) {%
+    \parbox{9.8cm}{\centering\fontsize{14}{17}\selectfont\textbf{\tituloTFM}}
+};
+
+% Autor
+\node[anchor=north,text=uaxblue] at ([xshift=10.2cm,yshift=-17.0cm]current page.north west) {%
+    \fontsize{13.5}{15.5}\selectfont\textbf{\autorTFM}
+};
+
+% Director
+\node[anchor=north] at ([xshift=10.2cm,yshift=-18.0cm]current page.north west) {%
+    \fontsize{13}{15}\selectfont\textbf{\directorTFM}
+};
+
+% Fecha
+\node[anchor=north] at ([xshift=10.2cm,yshift=-19.45cm]current page.north west) {%
+    \fontsize{13}{15}\selectfont\textbf{\fechaTFM}
+};
+
+\end{tikzpicture}
+
+\mbox{}
+\restoregeometry
+\end{titlepage}

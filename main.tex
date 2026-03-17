@@ -1,27 +1,23 @@
 \documentclass[12pt]{report}
 
 \usepackage[spanish]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{graphicx}
-\usepackage{geometry}
-\usepackage{setspace}
+\usepackage{fontspec}
+\setmainfont{Arial}
 
-\geometry{a4paper, margin=2.5cm}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{setspace}
 
 \begin{document}
 
-% --- PORTADA ---
 \input{portada}
 
 \newpage
-
-% --- INDICE ---
 \tableofcontents
 
 \newpage
-
-% --- CAPITULOS ---
 \input{chapters/introduccion}
 
 \end{document}

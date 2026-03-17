@@ -1,10 +1,10 @@
 # Plantilla de TFM para el MU en Inteligencia Artificial (UAX) en `LaTeX`
 
-Se está usando **`pdflatex`** para realizar la plantilla:
+Se está usando **`xelatex`** para realizar la plantilla:
 
 Para ejecutarla:
 
-`pdflatex main.tex`
+`xelatex main.tex`
 
 **Este repositorio está en desarrollo, puedes contribuir en el diseño de la plantilla, fuentes, nuevos capitulos etc.***
 
