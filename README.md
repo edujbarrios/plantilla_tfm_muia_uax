@@ -7,9 +7,17 @@
 > [!NOTE]
 > Se asume que quien use esta plantilla, tiene conocimientos avanzados de **LaTeX**, por eso se han simplificado las instrucciones de uso
 
-Se está usando **`xelatex`** para compilar la plantilla:
+Se está usando **`xelatex`** para compilar la plantilla.
+La bibliografía está configurada con **`biblatex` + `biber`** en formato APA.
 
-`xelatex main.tex`
+Para compilar correctamente:
+
+```bash
+xelatex main.tex
+biber main
+xelatex main.tex
+xelatex main.tex
+```
 
 **Este repositorio está en desarrollo, puedes contribuir en el diseño de la plantilla, fuentes, nuevos capitulos etc.***
 

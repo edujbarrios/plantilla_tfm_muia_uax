@@ -5,6 +5,8 @@
 *.toc
 *.blg
 *.bbl
+*.bcf
+*.run.xml
 *.synctex.gz
 *.fls
 *.fdb_latexmk
