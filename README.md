@@ -5,7 +5,7 @@
 ***Inspirada en la plantilla de word disponible en el campus.***
 
 > [!NOTE]
-> Se asume que quien use esta plantilla, tiene conocimientos avanzados de **LaTex**, por eso se han simplificado las instrucciones de uso
+> Se asume que quien use esta plantilla, tiene conocimientos avanzados de **LaTeX**, por eso se han simplificado las instrucciones de uso
 
 Se está usando **`xelatex`** para compilar la plantilla:
 

@@ -1,19 +1,60 @@
 \documentclass[12pt]{report}
 
 \usepackage[spanish]{babel}
-\usepackage[T1]{fontenc}
+\usepackage{fontspec}
 \usepackage{xcolor}
 \usepackage{geometry}
 \usepackage{tikz}
 \usepackage{fancyhdr}
 \usepackage[hidelinks,breaklinks]{hyperref}
+\usepackage{xurl}
 \usepackage{setspace}
 \usepackage{titlesec}
 \usepackage{hanging}
 \usepackage{enumitem}
 
+\newcommand{\setCenturyBodyFont}{
+    \IfFontExistsTF{Century Schoolbook}{
+        \setmainfont{Century Schoolbook}
+    }{
+        \IfFontExistsTF{Century}{
+            \setmainfont{Century}[AutoFakeBold=2,AutoFakeSlant=0.2]
+        }{
+            \setmainfont{TeX Gyre Schola}
+        }
+    }
+}
+
 \definecolor{uaxblue}{HTML}{0060AB}
 \definecolor{uaxdark}{HTML}{003F70}
+
+% Parámetros editables de cabecera y pie
+\newcommand{\TFMAuthor}{[Apellidos, Nombre autor]}
+\newcommand{\TFMTitle}{[Título del TFM]}
+\newcommand{\TFMHeaderRuleWidth}{0pt}
+\newcommand{\TFMHeaderLogoPath}{assets/transparent_logo.png}
+\newcommand{\TFMHeaderLogoHeight}{0.8cm}
+\newcommand{\TFMHeaderLogoRaise}{-0.1ex}
+\newcommand{\TFMHeadHeight}{30pt}
+\newcommand{\TFMFooterRuleWidth}{0pt}
+\newcommand{\TFMFooterGap}{0.75em}
+\newcommand{\TFMFooterSeparatorWidth}{0.4pt}
+\newcommand{\TFMFooterSeparatorHeight}{1.6em}
+\newcommand{\TFMFooterSeparatorRaise}{-0.2ex}
+
+\newcommand{\TFMHeaderRightContent}{
+    \IfFileExists{\TFMHeaderLogoPath}{
+        \raisebox{\TFMHeaderLogoRaise}{\includegraphics[height=\TFMHeaderLogoHeight]{\TFMHeaderLogoPath}}
+    }{}
+}
+
+\newcommand{\TFMFooterRightContent}{
+    {\small\itshape\textcolor{uaxblue}{\TFMTitle}}%
+    \hspace{\TFMFooterGap}%
+    \textcolor{uaxblue}{\rule[\TFMFooterSeparatorRaise]{\TFMFooterSeparatorWidth}{\TFMFooterSeparatorHeight}}%
+    \hspace{\TFMFooterGap}%
+    {\small\thepage}%
+}
 
 % Márgenes
 \geometry{
@@ -27,9 +68,9 @@
 \onehalfspacing
 
 % Estilos de capítulos y secciones
-\titleformat{\chapter}[display]
-    {\color{uaxblue}\large\bfseries}
-    {\chaptertitlename\ \thechapter}{20pt}{\Large}
+\titleformat{name=\chapter}[block]
+    {\color{uaxblue}\normalfont\fontsize{20}{24}\selectfont\raggedright}
+    {\chaptertitlename\ \thechapter:}{0.5em}{}
 
 \titleformat{\section}
     {\color{uaxblue}\large\bfseries}
@@ -37,19 +78,35 @@
 
 % Encabezados y pies de página
 \pagestyle{fancy}
-\fancyhead[L]{\small \textit{[Apellidos, Nombre autor]}}
-\fancyhead[R]{}
-\renewcommand{\headrulewidth}{0.4pt}
-\fancyfoot[C]{\thepage}
+\setlength{\headheight}{\TFMHeadHeight}
+\fancyhf{}
+\fancyhead[L]{\small\itshape \textcolor{uaxblue}{\TFMAuthor}}
+\fancyhead[R]{\TFMHeaderRightContent}
 \fancyfoot[L]{}
-\fancyfoot[R]{}
+\fancyfoot[C]{}
+\fancyfoot[R]{\TFMFooterRightContent}
+\renewcommand{\headrulewidth}{\TFMHeaderRuleWidth}
+\renewcommand{\footrulewidth}{\TFMFooterRuleWidth}
 
-\renewcommand{\footrulewidth}{0.4pt}
+% El estilo "plain" se aplica en páginas de inicio de capítulo.
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyhead[L]{\small\itshape \textcolor{uaxblue}{\TFMAuthor}}
+    \fancyhead[R]{\TFMHeaderRightContent}
+    \fancyfoot[L]{}
+    \fancyfoot[C]{}
+    \fancyfoot[R]{\TFMFooterRightContent}
+    \renewcommand{\headrulewidth}{\TFMHeaderRuleWidth}
+    \renewcommand{\footrulewidth}{\TFMFooterRuleWidth}
+}
 
 \begin{document}
 
 % ===== PORTADA =====
 \input{portada}
+
+% El cuerpo del documento usa tipografía Century (excepto portada)
+\setCenturyBodyFont
 
 % ===== RESUMEN Y ABSTRACT =====
 \input{resumen}
@@ -85,6 +142,9 @@ apellido del autor.]
 \vspace{1cm}
 
 % Formato APA con sangría francesa
+\begingroup
+\sloppy
+\setlength{\emergencystretch}{3em}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.35cm}
 
@@ -101,6 +161,7 @@ Apellido Autor, N. (2023). \textit{Título del libro de referencia}. Editorial A
 \end{hangparas}
 
 {\small [Añade aquí tus referencias siguiendo el formato APA especificado.]}
+\endgroup
 
 % Restaurar interlineado entre párrafos
 \setlength{\parskip}{0in}
