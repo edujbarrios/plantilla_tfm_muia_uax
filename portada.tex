@@ -9,6 +9,14 @@
 \newcommand{\fechaTFM}{[Fecha (mes y año)]}
 \newcommand{\logoTFM}{assets/transparent_logo.png}
 
+% ===== LOGO CENTRADO DEBAJO DEL MÁSTER =====
+\noindent
+\begin{tikzpicture}[remember picture, overlay]
+\node[anchor=center] at ([xshift=12cm,yshift=-7.8cm]current page.north west) {%
+    \includegraphics[height=1.8cm]{\logoTFM}
+};
+\end{tikzpicture}
+
 % ===== COLOR =====
 \definecolor{uaxblue}{RGB}{70,95,155}
 
@@ -37,11 +45,9 @@ rectangle
 % COLUMNA IZQUIERDA
 % =========================================================
 
-% Logo arriba izquierda
+% Texto UAX arriba izquierda (sin logo)
 \node[anchor=north] at ([xshift=1.875cm,yshift=-1.15cm]current page.north west) {%
-    \IfFileExists{\logoTFM}
-        {\includegraphics[width=0.95cm]{\logoTFM}}
-        {\textcolor{uaxblue}{\fontsize{10}{12}\selectfont\textbf{UAX}}}
+    \textcolor{uaxblue}{\fontsize{12}{14}\selectfont\textbf{UAX}}
 };
 
 % Texto vertical centrado dentro de la columna izquierda
@@ -57,46 +63,46 @@ rectangle
 
 % =========================================================
 % BLOQUE CENTRAL
-% Centro visual aproximado del bloque principal: x = 10.2cm
+% Centro visual: x = 12cm (centrado dentro del recuadro de la derecha)
 % =========================================================
 
 % Universidad
-\node[anchor=north,text=uaxblue] at ([xshift=10.2cm,yshift=-2.35cm]current page.north west) {%
+\node[anchor=north,text=uaxblue] at ([xshift=12cm,yshift=-2.35cm]current page.north west) {%
     \fontsize{17}{19}\selectfont\textbf{UNIVERSIDAD ALFONSO X EL SABIO}
 };
 
 % Business Tech
-\node[anchor=north] at ([xshift=10.2cm,yshift=-3.65cm]current page.north west) {%
+\node[anchor=north] at ([xshift=12cm,yshift=-3.65cm]current page.north west) {%
     \fontsize{14}{16}\selectfont\textbf{Business Tech}
 };
 
 % Máster
-\node[anchor=north] at ([xshift=10.2cm,yshift=-4.75cm]current page.north west) {%
+\node[anchor=north] at ([xshift=12cm,yshift=-4.75cm]current page.north west) {%
     \fontsize{13}{15}\selectfont\textbf{Máster Universitario en Inteligencia Artificial}
 };
 
 % Título del tipo de trabajo
-\node[anchor=north] at ([xshift=10.2cm,yshift=-10.25cm]current page.north west) {%
+\node[anchor=north] at ([xshift=12cm,yshift=-10.25cm]current page.north west) {%
     \fontsize{22}{24}\selectfont\textbf{TRABAJO DE FIN DE MÁSTER}
 };
 
 % Título del trabajo
-\node[anchor=north] at ([xshift=10.2cm,yshift=-13.55cm]current page.north west) {%
-    \parbox{9.8cm}{\centering\fontsize{14}{17}\selectfont\textbf{\tituloTFM}}
+\node[anchor=north] at ([xshift=12cm,yshift=-13.55cm]current page.north west) {%
+    \parbox{10cm}{\centering\fontsize{14}{17}\selectfont\textbf{\tituloTFM}}
 };
 
 % Autor
-\node[anchor=north,text=uaxblue] at ([xshift=10.2cm,yshift=-17.0cm]current page.north west) {%
+\node[anchor=north,text=uaxblue] at ([xshift=12cm,yshift=-17.0cm]current page.north west) {%
     \fontsize{13.5}{15.5}\selectfont\textbf{\autorTFM}
 };
 
 % Director
-\node[anchor=north] at ([xshift=10.2cm,yshift=-18.0cm]current page.north west) {%
+\node[anchor=north] at ([xshift=12cm,yshift=-18.0cm]current page.north west) {%
     \fontsize{13}{15}\selectfont\textbf{\directorTFM}
 };
 
 % Fecha
-\node[anchor=north] at ([xshift=10.2cm,yshift=-19.45cm]current page.north west) {%
+\node[anchor=north] at ([xshift=12cm,yshift=-19.45cm]current page.north west) {%
     \fontsize{13}{15}\selectfont\textbf{\fechaTFM}
 };
 

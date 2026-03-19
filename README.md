@@ -1,9 +1,8 @@
 # Plantilla de TFM para el MU en Inteligencia Artificial (UAX) en `LaTeX`
 
+![Status](https://img.shields.io/badge/status-in%20development-orange?style=for-the-badge)
+
 ***Inspirada en la plantilla de word disponible en el campus.***
-
-<image src="readme_images/portada.png" alt="Descripción de la imagen">
-
 
 Se está usando **`xelatex`** para realizar la plantilla:
 
