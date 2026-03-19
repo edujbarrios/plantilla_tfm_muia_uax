@@ -6,7 +6,7 @@
 \usepackage{geometry}
 \usepackage{tikz}
 \usepackage{fancyhdr}
-\usepackage[hidelinks,breaklinks]{hyperref}
+\usepackage[breaklinks]{hyperref}
 \usepackage{xurl}
 \usepackage{setspace}
 \usepackage{titlesec}
@@ -34,6 +34,14 @@
 
 \definecolor{uaxblue}{HTML}{0060AB}
 \definecolor{uaxdark}{HTML}{003F70}
+
+\hypersetup{
+    colorlinks=false,
+    pdfborderstyle={/S/U/W 1},
+    linkbordercolor=uaxblue,
+    citebordercolor=uaxblue,
+    urlbordercolor=uaxblue
+}
 
 % Parámetros editables de cabecera y pie
 \newcommand{\TFMAuthor}{[Apellidos, Nombre autor]}
@@ -64,8 +72,12 @@
 }
 
 % Parámetros APA en listado de referencias (sangría francesa)
-\setlength{\bibhang}{0.4in}
+\setlength{\bibhang}{0.5in}
 \setlength{\bibitemsep}{0.35cm}
+
+% Enlaces de referencias en azul UAX y subrayados
+\DeclareFieldFormat{url}{\href{#1}{\textcolor{uaxblue}{\nolinkurl{#1}}}}
+\DeclareFieldFormat{doi}{\href{https://doi.org/#1}{\textcolor{uaxblue}{\nolinkurl{https://doi.org/#1}}}}
 
 % Márgenes
 \geometry{
@@ -80,7 +92,7 @@
 
 % Estilos de capítulos y secciones
 \titleformat{name=\chapter}[block]
-    {\color{uaxblue}\normalfont\fontsize{20}{24}\selectfont\raggedright}
+    {\color{uaxblue}\normalfont\fontsize{20}{24}\selectfont}
     {\chaptertitlename\ \thechapter:}{0.5em}{}
 
 \titleformat{\section}
@@ -132,19 +144,19 @@
 \setcounter{page}{1}
 \pagenumbering{arabic}
 
-\input{chapters/introduccion}
-\input{chapters/objetivos}
-\input{chapters/marco_teorico}
-\input{chapters/marco_metodologico}
-\input{chapters/resultados_discusion}
-\input{chapters/conclusiones}
+\input{chapters/01_introduccion}
+\input{chapters/02_objetivos}
+\input{chapters/03_marco_teorico}
+\input{chapters/04_marco_metodologico}
+\input{chapters/05_resultados_discusion}
+\input{chapters/06_conclusiones}
 
 % ===== BIBLIOGRAFÍA =====
 \cleardoublepage
-\input{chapters/bibliografia}
+\input{chapters/07_bibliografia}
 
 % ===== ANEXOS =====
 \cleardoublepage
-\input{chapters/anexos}
+\input{chapters/08_anexos}
 
 \end{document}
