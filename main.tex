@@ -85,23 +85,24 @@ apellido del autor.]
 \vspace{1cm}
 
 % Formato APA con sangría francesa
-\setlength{\parindent}{-0.4in}
-\setlength{\leftskip}{0.4in}
-\setlength{\parskip}{0.15cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.35cm}
 
-\begin{itemize}[label={}]
-    \item Apellido Autor, N. (2024). Título del trabajo de fin de máster. \textit{Universidad Alfonso X el Sabio}.
-    
-    \item Apellido Autor, N. y Otro Autor, X. (2024). Título del artículo científico. \textit{Nombre de la Revista Académica}, 10(2), 1--15. https://doi.org/10.xxxx/xxxxx
-    
-    \item Apellido Autor, N. (2023). \textit{Título del libro de referencia}. Editorial Académica. https://doi.org/10.xxxx/xxxxx
-    
-    \item [Añade aquí tus referencias siguiendo el formato APA especificado]
-\end{itemize}
+\begin{hangparas}{0.4in}{1}
+Apellido Autor, N. (2024). Título del trabajo de fin de máster. \textit{Universidad Alfonso X el Sabio}.
+\end{hangparas}
 
-% Restaurar sangría normal
-\setlength{\parindent}{0in}
-\setlength{\leftskip}{0in}
+\begin{hangparas}{0.4in}{1}
+Apellido Autor, N. y Otro Autor, X. (2024). Título del artículo científico. \textit{Nombre de la Revista Académica}, 10(2), 1--15. \url{https://doi.org/10.xxxx/xxxxx}
+\end{hangparas}
+
+\begin{hangparas}{0.4in}{1}
+Apellido Autor, N. (2023). \textit{Título del libro de referencia}. Editorial Académica. \url{https://doi.org/10.xxxx/xxxxx}
+\end{hangparas}
+
+{\small [Añade aquí tus referencias siguiendo el formato APA especificado.]}
+
+% Restaurar interlineado entre párrafos
 \setlength{\parskip}{0in}
 
 % ===== ANEXOS =====

@@ -4,9 +4,10 @@
 
 ***Inspirada en la plantilla de word disponible en el campus.***
 
-Se está usando **`xelatex`** para realizar la plantilla:
+> [!NOTE]
+> Se asume que quien use esta plantilla, tiene conocimientos avanzados de **LaTex**, por eso se han simplificado las instrucciones de uso
 
-Para ejecutarla:
+Se está usando **`xelatex`** para compilar la plantilla:
 
 `xelatex main.tex`
 
