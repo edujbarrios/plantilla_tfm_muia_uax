@@ -2,7 +2,7 @@
 
 ![Status](https://img.shields.io/badge/status-in%20development-orange?style=for-the-badge)
 
-***Inspirada en la plantilla de word disponible en el campus.***
+<image src="readme_images/portada.png" alt="Descripción de la imagen">
 
 > [!NOTE]
 > Se asume que quien use esta plantilla, tiene conocimientos avanzados de **LaTeX**, por eso se han simplificado las instrucciones de uso
