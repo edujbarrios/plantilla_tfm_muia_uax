@@ -51,11 +51,14 @@
 \newcommand{\TFMHeaderLogoHeight}{0.8cm}
 \newcommand{\TFMHeaderLogoRaise}{-0.1ex}
 \newcommand{\TFMHeadHeight}{30pt}
+\newcommand{\TFMHeadSep}{12pt}
 \newcommand{\TFMFooterRuleWidth}{0pt}
 \newcommand{\TFMFooterGap}{0.75em}
 \newcommand{\TFMFooterSeparatorWidth}{0.4pt}
 \newcommand{\TFMFooterSeparatorHeight}{1.6em}
 \newcommand{\TFMFooterSeparatorRaise}{-0.2ex}
+\newcommand{\TFMChapterTopSpacing}{24pt}
+\newcommand{\TFMChapterBottomSpacing}{1.2em}
 
 \newcommand{\TFMHeaderRightContent}{
     \IfFileExists{\TFMHeaderLogoPath}{
@@ -95,6 +98,13 @@
     {\color{uaxblue}\normalfont\fontsize{20}{24}\selectfont}
     {\chaptertitlename\ \thechapter:}{0.5em}{}
 
+\titleformat{name=\chapter,numberless}[block]
+    {\color{uaxblue}\normalfont\fontsize{20}{24}\selectfont}
+    {}{0pt}{}
+
+\titlespacing*{\chapter}
+    {0pt}{\TFMChapterTopSpacing}{\TFMChapterBottomSpacing}
+
 \titleformat{\section}
     {\color{uaxblue}\large\bfseries}
     {\thesection}{1em}{}
@@ -102,6 +112,7 @@
 % Encabezados y pies de página
 \pagestyle{fancy}
 \setlength{\headheight}{\TFMHeadHeight}
+\setlength{\headsep}{\TFMHeadSep}
 \fancyhf{}
 \fancyhead[L]{\small\itshape \textcolor{uaxblue}{\TFMAuthor}}
 \fancyhead[R]{\TFMHeaderRightContent}
